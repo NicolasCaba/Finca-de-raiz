@@ -9,4 +9,8 @@ function eventListeners() {
     MOBILE_MENU.addEventListener("click", navegacionResponsive);
 }
 
-function navegacionResponsive() {}
+function navegacionResponsive() {
+    const NAVEGACION = document.querySelector(".navegacion");
+
+    NAVEGACION.classList.toggle("mostrar");
+}
