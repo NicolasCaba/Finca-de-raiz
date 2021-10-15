@@ -1,0 +1,15 @@
+.informacion {
+    @include tablet {
+        @include grid(2, 3rem);
+    }
+}
+
+.texto-informacion blockquote {
+    font-size: 2rem;
+    font-weight: $bold;
+    margin: 0 3rem;
+
+    span {
+        color: $azul;
+    }
+}

@@ -1,0 +1,47 @@
+@include tablet() {
+    .contenedor-anuncios {
+        @include grid(3, 2rem);
+    }
+}
+
+.anuncio {
+    background-color: lighten($gris, 6);
+    border: 2px solid lighten($grisOscuro, 50);
+}
+
+.contenido-anuncio {
+    padding: 0 2rem;
+
+    h3 {
+        margin: 1rem 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    
+
+}
+
+.precio {
+    color: $verde;
+    font-weight: $bold;
+}
+.iconos-caracteristicas {
+    margin: 2rem 0;
+    list-style: none;
+    padding-left: 0;
+    @include grid(3, 2rem);
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        height: 3rem;
+        width: 70%;
+    }
+}
