@@ -24,6 +24,11 @@
   "homepage": "https://github.com/NicolasCaba/Finca-de-raiz#readme",
   "devDependencies": {
     "cssnano": "^5.0.8",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
     "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
@@ -39,6 +44,7 @@
     "gulp-terser-js": "^5.2.2",
     "gulp-webp": "^4.0.0",
     "postcss": "^8.3.9",
+    "prettier": "^2.4.1",
     "sass": "^1.41.1",
     "terser": "^5.8.0"
   }

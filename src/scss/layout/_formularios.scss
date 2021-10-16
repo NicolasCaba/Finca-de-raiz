@@ -1,43 +1,44 @@
 .formulario {
-	p {
-		font-size: 1.5rem;
-		color: $grisOscuro;
-		margin: 2rem 0 0.5rem 0;
-	}
+  p {
+    font-size: 1.5rem;
+    color: $grisOscuro;
+    margin: 2rem 0 0.5rem 0;
+  }
 
-	legend {
-		font-size: 2rem;
-		color: $grisOscuro;
-		font-weight: $bold;
-	}
+  legend {
+    font-size: 2rem;
+    color: $grisOscuro;
+    font-weight: $bold;
+  }
 
-	label {
-		display: block;
-		font-weight: $bold;
-		text-transform: uppercase;
-	}
+  label {
+    display: block;
+    font-weight: $bold;
+    text-transform: uppercase;
+  }
 
-	input:not([type="submit"]),
-	textarea,
-	select {
-		padding: 0.4rem 1rem;
-		display: block;
-		width: 100%;
-		border: 1px solid darken($gris, 15);
-		background-color: $blanco;
-		margin-bottom: 2rem;
-	}
+  input:not([type='submit']),
+  textarea,
+  select {
+    padding: 0.4rem 1rem;
+    display: block;
+    width: 100%;
+    border: 1px solid darken($gris, 15);
+    background-color: $blanco;
+    margin-bottom: 2rem;
+  }
 
-	textarea {
-		height: 20rem;
-	}
+  textarea {
+    height: 20rem;
+    resize: none;
+  }
 }
 
 .forma-contacto {
-	display: flex;
-	max-width: 26rem;
+  display: flex;
+  max-width: 26rem;
 
-	input[type="radio"] {
-		margin: auto 0;
-	}
+  input[type='radio'] {
+    margin: auto 0;
+  }
 }
