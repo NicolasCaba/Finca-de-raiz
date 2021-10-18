@@ -1,7 +1,7 @@
 function navegacionResponsive() {
-  const NAVEGACION = document.querySelector('.navegacion');
+  const navegacion = document.querySelector('.navegacion');
 
-  NAVEGACION.classList.toggle('mostrar');
+  navegacion.classList.toggle('mostrar');
 }
 
 function darkMode() {
@@ -9,18 +9,18 @@ function darkMode() {
 }
 
 function autoDarkMode() {
-  const COLOR_PREFERENCE_DARK_MODE = window.matchMedia(
+  const colorPreferenceDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)',
   );
 
-  if (COLOR_PREFERENCE_DARK_MODE.matches) {
+  if (colorPreferenceDarkMode.matches) {
     document.body.classList.add('dark-mode');
   } else {
     document.body.classList.remove('dark-mode');
   }
 
-  COLOR_PREFERENCE_DARK_MODE.addEventListener('change', () => {
-    if (COLOR_PREFERENCE_DARK_MODE.matches) {
+  colorPreferenceDarkMode.addEventListener('change', () => {
+    if (colorPreferenceDarkMode.matches) {
       document.body.classList.add('dark-mode');
     } else {
       document.body.classList.remove('dark-mode');
@@ -29,11 +29,11 @@ function autoDarkMode() {
 }
 
 function eventListeners() {
-  const MOBILE_MENU = document.querySelector('.mobile-menu');
-  const BOTON_DARK_MODE = document.querySelector('.dark-mode-boton');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const botonDarkMode = document.querySelector('.dark-mode-boton');
 
-  MOBILE_MENU.addEventListener('click', navegacionResponsive);
-  BOTON_DARK_MODE.addEventListener('click', darkMode);
+  mobileMenu.addEventListener('click', navegacionResponsive);
+  botonDarkMode.addEventListener('click', darkMode);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
