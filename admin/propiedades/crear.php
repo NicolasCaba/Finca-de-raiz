@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($resultado) {
       // Redireccionar
 
-      header('Location: /Finca-de-raiz/admin');
+      header('Location: /Finca-de-raiz/admin?resultado=1');
     }
   }
 }
