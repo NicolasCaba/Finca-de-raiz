@@ -4,7 +4,7 @@ $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
 
 if (!$id) {
-  header('Location: /Finca-de-raiz/admin');
+  header('Location: /admin');
 }
 
 // Base de datos
@@ -17,7 +17,7 @@ $resultado = mysqli_query($db, $consulta);
 $propiedad = mysqli_fetch_assoc($resultado);
 
 if ($propiedad === null) {
-  header('Location: /Finca-de-raiz/admin');
+  header('Location: /admin');
 }
 
 // Consulta para obtener la base de datos
@@ -96,7 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Revisar si el arreglo de errores se encuentra vacio
   if (empty($errores)) {
-    /* Subida de archivos */
     // Crear carpeta
     $carpetaImagenes = '../../imagenes/';
 
@@ -104,15 +103,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       mkdir($carpetaImagenes);
     }
 
-    // Generar nombre para la imagen
-    $nombreImagen = md5(uniqid(rand(), true)) . '.jpg';
+    $nombreImagen = '';
 
-    //Subir la imagen
-    move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+    /* Subida de archivos */
+    if ($imagen['name']) {
+      // Eliminar imagen ya existente
+      unlink($carpetaImagenes . $propiedad['imagen']);
+
+      // Generar nombre para la imagen
+      $nombreImagen = md5(uniqid(rand(), true)) . '.jpg';
+
+      //Subir la imagen
+      move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+    } else {
+      $nombreImagen = $propiedad['imagen'];
+    }
+
+
+
 
 
     // Insertar en la base de datos
-    $query = "UPDATE propiedades SET titulo = '${titulo}', precio = '${precio}', descripcion = '${descripcion}', habitaciones = ${habitaciones}, wc = ${wc}, estacionamiento = ${estacionamiento}, vendedorId = ${vendedorId} WHERE id = ${id}";
+    $query = "UPDATE propiedades SET titulo = '${titulo}', precio = '${precio}', imagen = '${nombreImagen}', descripcion = '${descripcion}', habitaciones = ${habitaciones}, wc = ${wc}, estacionamiento = ${estacionamiento}, vendedorId = ${vendedorId} WHERE id = ${id}";
 
 
     $resultado = mysqli_query($db, $query);
@@ -120,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($resultado) {
       // Redireccionar
 
-      header('Location: /Finca-de-raiz/admin?resultado=2');
+      header('Location: /admin?resultado=2');
     }
   }
 }
@@ -137,7 +149,7 @@ incluirTemplate('header');
 <main class="contenedor seccion">
   <h1>Actualizar propiedad</h1>
 
-  <a href="/Finca-de-raiz/admin" class="boton boton-verde">Volver</a>
+  <a href="/admin" class="boton boton-verde">Volver</a>
 
   <?php foreach ($errores as $error) : ?>
     <div class="alerta error">
@@ -158,7 +170,7 @@ incluirTemplate('header');
       <label for="imagen">Imagen</label>
       <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
 
-      <img src="/Finca-de-raiz/imagenes/<?php echo $imagenPropiedad ?>" alt="Imagen de la propiedad" class="imagen-small">
+      <img src="/imagenes/<?php echo $imagenPropiedad ?>" alt="Imagen de la propiedad" class="imagen-small">
 
       <label for="descripcion">Descripcion</label>
       <textarea name="descripcion" id="descripcion"><?php echo $descripcion ?></textarea>

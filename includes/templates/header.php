@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finca de Raiz</title>
-  <link rel="stylesheet" href="/Finca-de-raiz/build/css/app.css" />
+  <link rel="stylesheet" href="/build/css/app.css" />
 </head>
 
 <body>
@@ -14,20 +14,20 @@
     <div class="contenedor contenido-header">
       <div class="barra">
         <a href="index.php">
-          <img src="/Finca-de-raiz/build/img/logo.svg" alt="Logo Finca de Raiz" />
+          <img src="/build/img/logo.svg" alt="Logo Finca de Raiz" />
         </a>
 
         <div class="mobile-menu">
-          <img src="/Finca-de-raiz/build/img/barras.svg" alt="Icono menu de hamburguesa" />
+          <img src="/build/img/barras.svg" alt="Icono menu de hamburguesa" />
         </div>
 
         <div class="derecha">
-          <img class="dark-mode-boton" src="/Finca-de-raiz/build/img/dark-mode.svg" alt="Boton dark mode" />
+          <img class="dark-mode-boton" src="/build/img/dark-mode.svg" alt="Boton dark mode" />
           <nav class="navegacion">
-            <a href="nosotros.php">Nosotros</a>
-            <a href="anuncios.php">Anuncios</a>
-            <a href="blog.php">Blog</a>
-            <a href="contacto.php">Contacto</a>
+            <a href="/nosotros.php">Nosotros</a>
+            <a href="/anuncios.php">Anuncios</a>
+            <a href="/blog.php">Blog</a>
+            <a href="/contacto.php">Contacto</a>
           </nav>
         </div>
       </div>

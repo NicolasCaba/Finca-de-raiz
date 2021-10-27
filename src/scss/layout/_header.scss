@@ -1,42 +1,47 @@
 .no-webp .inicio {
-	background-image: url(../img/header.jpg);
+  background-image: url(../img/header.jpg);
 }
 
 .webp .inicio {
-	background-image: url(../img/header.webp);
+  background-image: url(../img/header.webp);
 }
 
 .header {
-	background-color: $grisOscuro;
-	padding: 1rem 0 3rem 0;
+  background-color: $grisOscuro;
+  padding: 1rem 0 3rem 0;
 
-	&.inicio {
-		background-position: center center;
-		background-size: cover;
-		@include tablet() {
-			min-height: 70rem;
-		}
-        .contenido-header {
-            gap: 20rem;
-        }
-	}
+  &.inicio {
+    background-position: center center;
+    background-size: cover;
+    @include tablet() {
+      min-height: 70rem;
+    }
+    .contenido-header {
+      gap: 20rem;
+    }
+  }
 }
 
 .contenido-header {
-	display: flex;
-	flex-direction: column;
-    justify-content: space-between;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    h1 {
-        font-size: 3rem;
-        color: $blanco;
-        font-weight: $regular;
-        span {
-            color: $azul;
-        }
-        @include tablet() {
-            font-size: 3.8rem;
-        }
+  h1 {
+    font-size: 3rem;
+    color: $blanco;
+    font-weight: $regular;
+    span {
+      color: $azul;
     }
+    @include tablet() {
+      font-size: 3.8rem;
+    }
+  }
+}
+
+.barra {
+  a {
+    width: 24rem;
+  }
 }

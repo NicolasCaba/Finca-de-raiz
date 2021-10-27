@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($resultado) {
       // Redireccionar
 
-      header('Location: /Finca-de-raiz/admin?resultado=1');
+      header('Location: /admin?resultado=1');
     }
   }
 }
@@ -122,7 +122,7 @@ incluirTemplate('header');
 <main class="contenedor seccion">
   <h1>Crear nueva propiedad</h1>
 
-  <a href="/Finca-de-raiz/admin" class="boton boton-verde">Volver</a>
+  <a href="/admin" class="boton boton-verde">Volver</a>
 
   <?php foreach ($errores as $error) : ?>
     <div class="alerta error">
@@ -130,7 +130,7 @@ incluirTemplate('header');
     </div>
   <?php endforeach; ?>
 
-  <form action="/Finca-de-raiz/admin/propiedades/crear.php" method="POST" class="formulario" enctype="multipart/form-data">
+  <form action="/admin/propiedades/crear.php" method="POST" class="formulario" enctype="multipart/form-data">
     <fieldset>
       <legend>Información General</legend>
 
